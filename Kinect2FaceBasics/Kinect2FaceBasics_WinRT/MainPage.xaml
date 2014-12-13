@@ -1,0 +1,23 @@
+﻿<Page
+    x:Class="Kinect2FaceBasics_WinRT.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Kinect2FaceBasics_WinRT"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Unloaded="Page_Unloaded">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Viewbox>
+            <Grid Width="1920" Height="1080">
+                <Image Name="camera" />
+                <Canvas Name="canvas">
+                    <Ellipse Name="ellipseEyeLeft" Style="{StaticResource EyeStyle}" />
+                    <Ellipse Name="ellipseEyeRight" Style="{StaticResource EyeStyle}" />
+                    <Ellipse Name="ellipseNose" Style="{StaticResource NoseStyle}" />
+                    <Ellipse Name="ellipseMouth" Style="{StaticResource MouthStyle}" />
+                </Canvas>
+            </Grid>
+        </Viewbox>
+    </Grid>
+</Page>

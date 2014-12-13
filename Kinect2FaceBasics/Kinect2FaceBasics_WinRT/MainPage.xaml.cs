@@ -1,26 +1,28 @@
-﻿using Microsoft.Kinect;
-using Microsoft.Kinect.Face;
+﻿using Microsoft.Kinect.Face;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.Foundation;
+using Windows.Foundation.Collections;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Primitives;
+using Windows.UI.Xaml.Data;
+using Windows.UI.Xaml.Input;
+using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Navigation;
+using WindowsPreview.Kinect;
 
-namespace Kinect2FaceBasics_NET
+// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
+
+namespace Kinect2FaceBasics_WinRT
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public partial class MainWindow : Window
+    public sealed partial class MainPage : Page
     {
         KinectSensor _sensor = null;
         ColorFrameReader _colorReader = null;
@@ -31,7 +33,7 @@ namespace Kinect2FaceBasics_NET
         FaceFrameSource _faceSource = null;
         FaceFrameReader _faceReader = null;
 
-        public MainWindow()
+        public MainPage()
         {
             InitializeComponent();
 
@@ -165,7 +167,7 @@ namespace Kinect2FaceBasics_NET
             }
         }
 
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        private void Page_Unloaded(object sender, RoutedEventArgs e)
         {
             if (_colorReader != null)
             {
@@ -187,7 +189,6 @@ namespace Kinect2FaceBasics_NET
 
             if (_faceSource != null)
             {
-                _faceSource.Dispose();
                 _faceSource = null;
             }
 

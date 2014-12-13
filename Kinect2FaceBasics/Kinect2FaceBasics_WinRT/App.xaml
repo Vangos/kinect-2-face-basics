@@ -1,7 +1,8 @@
-﻿<Application x:Class="Kinect2FaceBasics_NET.App"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             StartupUri="MainWindow.xaml">
+﻿<Application
+    x:Class="Kinect2FaceBasics_WinRT.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Kinect2FaceBasics_WinRT">    
     <Application.Resources>
         <Style x:Key="EyeStyle" TargetType="Ellipse">
             <Setter Property="Width" Value="40" />
@@ -21,4 +22,5 @@
             <Setter Property="StrokeThickness" Value="4" />
         </Style>
     </Application.Resources>
+
 </Application>

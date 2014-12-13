@@ -1,0 +1,11 @@
+﻿<Window x:Class="Kinect2FaceBasics_NET.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525" Closing="Window_Closing">
+    <Viewbox>
+        <Grid Width="1920" Height="1080">
+            <Image Name="camera" />
+            <Canvas Name="canvas" />
+        </Grid>
+    </Viewbox>
+</Window>
